@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
   //Variables
-  final String? title;
-  final Color? color;
+  final String title;
+  final Color color;
   //Constructor
   CategoryItem(this.title, this.color);
 
@@ -11,10 +11,13 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15),
-      child: Text(title!),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.subtitle1,
+      ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [color!.withOpacity(0.7), color!],
+          colors: [color.withOpacity(0.7), color],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
